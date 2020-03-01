@@ -27,8 +27,8 @@
                             <div class="col-md-5 center-item">
                                 <div class="input-group number-spinner">
                                     <button id="minusOne" class="btn btn-default"><i class="fas fa-minus"></i></button>
-                                    <input id="cart-quantity-input-one" onkeyup="updateInputOne(value)" type="text"
-                                           class="form-control text-center" value="1">
+                                    <input id="cart-quantity-input-one" type="text"
+                                           class="form-control text-center" value="1" disabled>
                                     <button id="plusOne" class="btn btn-default"><i class="fas fa-plus"></i></button>
                                 </div>
                                 <h5>$<span id="item-price-one">1219</span></h5>
@@ -46,8 +46,8 @@
                             <div class="col-md-5 center-item">
                                 <div class="input-group number-spinner">
                                     <button id="minusTwo" class="btn btn-default"><i class="fas fa-minus"></i></button>
-                                    <input id="cart-quantity-input-two" onkeyup="updateInputTwo(value)" type="text"
-                                           class="form-control text-center cart-quantity-input" value="1">
+                                    <input id="cart-quantity-input-two" type="text"
+                                           class="form-control text-center cart-quantity-input" value="1" disabled>
                                     <button id="plusTwo" class="btn btn-default"><i class="fas fa-plus"></i></button>
 
                                 </div>
@@ -182,40 +182,6 @@
         const subTotal = currentAmount - newAmount;
         document.getElementById("cart-subTotal-price").innerText = subTotal + taxPrice2;
         document.getElementById("cart-total-price").innerText = subTotal + taxPrice2;
-    }
-
-    function updateInputOne() {
-        var singlePrice = 1219;
-        var x = document.getElementById("cart-quantity-input-one").value;
-        var x2 = parseFloat(x);
-
-        var newP = x2 * singlePrice;
-        document.getElementById("item-price-one").innerText= newP;
-        var newPrice1= document.getElementById("item-price-one").innerText;
-        var amount2 = parseFloat(newPrice1);
-        var newPrice2= document.getElementById("item-price-two").innerText;
-        var amount3 = parseFloat(newPrice2);
-
-        var newPrice3 = amount2 + amount3 + 0;
-         document.getElementById("cart-subTotal-price").innerText = newPrice3;
-         document.getElementById("cart-total-price").innerText = newPrice3;
-    }
-
-    function updateInputTwo() {
-        var singlePrice = 59;
-        var x = document.getElementById("cart-quantity-input-two").value;
-        var x2 = parseFloat(x);
-
-        var newP = x2 * singlePrice;
-        document.getElementById("item-price-two").innerText= newP;
-        var newPrice1= document.getElementById("item-price-one").innerText;
-        var amount2 = parseFloat(newPrice1);
-        var newPrice2= document.getElementById("item-price-two").innerText;
-        var amount3 = parseFloat(newPrice2);
-
-        var newPrice3 = amount2 + amount3 + 0;
-        document.getElementById("cart-subTotal-price").innerText = newPrice3;
-        document.getElementById("cart-total-price").innerText = newPrice3;
     }
 
     //Remove cart Item
