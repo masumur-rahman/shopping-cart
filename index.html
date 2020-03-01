@@ -103,11 +103,22 @@
     const minusOneBtn = document.getElementById("minusOne");
     minusOneBtn.addEventListener("click", function () {
         nCount =document.getElementById("cart-quantity-input-one").value;
+        console.log(nCount);
+        if(nCount<=0){
+            nCount =1;
+        }
         nCount -= 1;
         var singlePrice = 1219;
         const itemPrice = document.getElementById("item-price-one").innerText;
         const newPrice = parseFloat(itemPrice);
-        document.getElementById("item-price-one").innerText = newPrice - singlePrice;
+        if(nCount<=0) {
+            document.getElementById("item-price-one").innerText = 0;
+            document.getElementById("item-one").style.display = "none";
+
+        }
+        else{
+            document.getElementById("item-price-one").innerText = newPrice - singlePrice;
+        }
         document.getElementById("cart-quantity-input-one").value=nCount;
         decreaseTotal(singlePrice);
 
@@ -130,11 +141,23 @@
     const minusTwoBtn = document.getElementById("minusTwo");
     minusTwoBtn.addEventListener("click", function () {
         nCount2 =document.getElementById("cart-quantity-input-two").value;
+        console.log(nCount);
+        if(nCount2<=0){
+            nCount2 =1;
+        }
         nCount2 -= 1;
         var singlePrice = 59;
         const itemPrice = document.getElementById("item-price-two").innerText;
         const newPrice = parseFloat(itemPrice);
-        document.getElementById("item-price-two").innerText = newPrice - singlePrice;
+        if(nCount2<=0) {
+            document.getElementById("item-price-two").innerText = 0;
+            document.getElementById("item-two").style.display = "none";
+
+        }
+        else{
+            document.getElementById("item-price-two").innerText = newPrice - singlePrice;
+        }
+        //document.getElementById("item-price-two").innerText = newPrice - singlePrice;
         decreaseTotal(singlePrice);
         document.getElementById("cart-quantity-input-two").value=nCount2;
 
